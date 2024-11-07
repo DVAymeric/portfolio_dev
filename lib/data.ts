@@ -80,32 +80,7 @@ export const experiencesData = [
 ] as const;
 
 export const projectsData = [
-    {
-        title: "Spotify",
-        description:
-            "Un clone de Spotify que j'ai construit pour le plaisir. Il a des fonctionnalités comme la lecture de musique, la recherche de chansons et la création de playlists.",
-        tags: ["React", "Spotify API", "Framer Motion"],
-        imageUrl: "/spotify.jpeg",
-        host: "https://spotitech.dayoo.ovh/",
-        competencies: [
-            "Développement frontend",
-            "Intégration API",
-            "Lecture de musique",
-        ],
-    },
-    {
-        title: "X Copy",
-        description:
-            "Un clone de X Copy que j'ai construit. Il y a toutes les fonctionnalités de X Copy, y compris la création de documents, la collaboration en temps réel et le partage de documents.",
-        tags: ["React", "Symfony", "Tailwind", "GraphQL"],
-        imageUrl: "/X.jpeg",
-        host: "https://qwitter.dayoo.ovh/View/index.html",
-        competencies: [
-            "Développement fullstack",
-            "Temps réel",
-            "Gestion de documents",
-        ],
-    },
+
     {
         title: "BSQ",
         description:
@@ -137,6 +112,7 @@ export const projectsData = [
             "Site e-commerce pour produit informatique. Les utilisateurs peuvent voir les produits disponibles, les ajouter au panier et passer commande.",
         tags: ["React", "Node.js", "MongoDB"],
         imageUrl: "/ecommerce.jpg",
+        modalImageUrl: "/ecommerce_2.png",
         host: "https://ecoco-phi.vercel.app/",
         competencies: [
             "Développement fullstack",
@@ -159,6 +135,33 @@ export const projectsData = [
             "Architecture client-serveur",
         ],
     },
+    {
+        title: "Spotify",
+        description:
+            "Un clone de Spotify que j'ai construit pour le plaisir. Il a des fonctionnalités comme la lecture de musique, la recherche de chansons et la création de playlists.",
+        tags: ["React", "Spotify API", "Framer Motion"],
+        imageUrl: "/spotify.jpeg",
+        host: "https://spotitech.dayoo.ovh/",
+        competencies: [
+            "Développement frontend",
+            "Intégration API",
+            "Lecture de musique",
+        ],
+    },
+    {
+        title: "X Copy",
+        description:
+            "Un clone de X Copy que j'ai construit. Il y a toutes les fonctionnalités de X Copy, y compris la création de documents, la collaboration en temps réel et le partage de documents.",
+        tags: ["React", "Symfony", "Tailwind", "GraphQL"],
+        imageUrl: "/X.jpeg",
+        host: "https://qwitter.dayoo.ovh/View/index.html",
+        competencies: [
+            "Développement fullstack",
+            "Temps réel",
+            "Gestion de documents",
+        ],
+    },
+    
 ] as const;
 
 export const skillsData: Skill[] = [
