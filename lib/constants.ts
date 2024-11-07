@@ -1,0 +1,2 @@
+export const PROJECT_IMAGE_WIDTH = 600;
+export const PROJECT_IMAGE_HEIGHT = 400;
