@@ -17,27 +17,18 @@ export default function About() {
             transition={{ delay: 0.175 }}
             id="about"
         >
-            <SectionHeading>Parcours</SectionHeading>
+            <SectionHeading>Mon Parcours</SectionHeading>
 
-            <p className="mb-3 text-align: justify">
-                Après une exploration enrichissante de divers horizons
-                professionnels, j'ai trouvé ma véritable vocation dans le
-                <span className="font-medium"> développement web</span>. Cette
-                découverte m'a conduit à la
-                <span className="font-medium"> Web@cadémie by EPitech</span>, où
-                j'ai plongé dans l'univers fascinant du
-                <span className="font-medium"> développement full-stack</span>.
+            <p className="mb-3 text-justify">
+                J'ai commencé par le développement web à la <span className="font-medium">Web@cadémie by Epitech</span>, où j'ai appris à construire des applications complètes. Mais créer des outils ne me suffisait pas : je voulais comprendre ce que les données pouvaient révéler.
             </p>
-            <p>
-                Ce qui me passionne le plus dans ce domaine, c'est la
-                <span className="italic">
-                    {" "}
-                    résolution de problèmes complexes
-                </span>
-                . Chaque défi est une opportunité d'apprentissage, et la
-                satisfaction de trouver une solution élégante est incomparable.
-                Cette quête constante d'innovation et d'amélioration guide
-                chacun de mes projets.
+
+            <p className="mb-3 text-justify">
+                C'est pour ça que je me suis tourné vers la <span className="font-medium">Data Analysis</span> à la <span className="font-medium">Wild Code School</span>. Aujourd'hui, je jongle entre ces deux casquettes : je peux aussi bien analyser des données avec <span className="italic">Python et SQL</span> que développer les outils pour les collecter et les rendre lisibles.
+            </p>
+
+            <p className="text-justify">
+                Mon approche ? Mettre la technique au service de la résolution de problèmes concrets et aider à prendre de meilleures décisions.
             </p>
         </motion.section>
     );

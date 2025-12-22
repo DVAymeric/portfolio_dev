@@ -72,14 +72,6 @@
         "async": false
       }
     },
-    "(app-client)/./components/skills.tsx": {
-      "*": {
-        "id": "(sc_client)/./components/skills.tsx",
-        "name": "*",
-        "chunks": [],
-        "async": false
-      }
-    },
     "(app-client)/./components/experience.tsx": {
       "*": {
         "id": "(sc_client)/./components/experience.tsx",
@@ -91,6 +83,22 @@
     "(app-client)/./components/contact.tsx": {
       "*": {
         "id": "(sc_client)/./components/contact.tsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./components/skills.tsx": {
+      "*": {
+        "id": "(sc_client)/./components/skills.tsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./node_modules/react-hot-toast/dist/index.mjs": {
+      "*": {
+        "id": "(sc_client)/./node_modules/react-hot-toast/dist/index.mjs",
         "name": "*",
         "chunks": [],
         "async": false
@@ -127,19 +135,11 @@
         "chunks": [],
         "async": false
       }
-    },
-    "(app-client)/./node_modules/react-hot-toast/dist/index.mjs": {
-      "*": {
-        "id": "(sc_client)/./node_modules/react-hot-toast/dist/index.mjs",
-        "name": "*",
-        "chunks": [],
-        "async": false
-      }
     }
   },
   "edgeSSRModuleMapping": {},
   "clientModules": {
-    "/home/aymeric/Epitech/portfolio_dev/node_modules/next/dist/client/components/error-boundary.js": {
+    "/Users/rick/projets/perso/portfolio_dev/node_modules/next/dist/client/components/error-boundary.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/error-boundary.js",
       "name": "*",
       "chunks": [
@@ -147,7 +147,7 @@
       ],
       "async": false
     },
-    "/home/aymeric/Epitech/portfolio_dev/node_modules/next/dist/esm/client/components/error-boundary.js": {
+    "/Users/rick/projets/perso/portfolio_dev/node_modules/next/dist/esm/client/components/error-boundary.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/error-boundary.js",
       "name": "*",
       "chunks": [
@@ -155,7 +155,7 @@
       ],
       "async": false
     },
-    "/home/aymeric/Epitech/portfolio_dev/node_modules/next/dist/client/components/app-router.js": {
+    "/Users/rick/projets/perso/portfolio_dev/node_modules/next/dist/client/components/app-router.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/app-router.js",
       "name": "*",
       "chunks": [
@@ -163,7 +163,7 @@
       ],
       "async": false
     },
-    "/home/aymeric/Epitech/portfolio_dev/node_modules/next/dist/esm/client/components/app-router.js": {
+    "/Users/rick/projets/perso/portfolio_dev/node_modules/next/dist/esm/client/components/app-router.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/app-router.js",
       "name": "*",
       "chunks": [
@@ -171,7 +171,7 @@
       ],
       "async": false
     },
-    "/home/aymeric/Epitech/portfolio_dev/node_modules/next/dist/client/components/layout-router.js": {
+    "/Users/rick/projets/perso/portfolio_dev/node_modules/next/dist/client/components/layout-router.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/layout-router.js",
       "name": "*",
       "chunks": [
@@ -179,7 +179,7 @@
       ],
       "async": false
     },
-    "/home/aymeric/Epitech/portfolio_dev/node_modules/next/dist/esm/client/components/layout-router.js": {
+    "/Users/rick/projets/perso/portfolio_dev/node_modules/next/dist/esm/client/components/layout-router.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/layout-router.js",
       "name": "*",
       "chunks": [
@@ -187,7 +187,7 @@
       ],
       "async": false
     },
-    "/home/aymeric/Epitech/portfolio_dev/node_modules/next/dist/client/components/render-from-template-context.js": {
+    "/Users/rick/projets/perso/portfolio_dev/node_modules/next/dist/client/components/render-from-template-context.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/render-from-template-context.js",
       "name": "*",
       "chunks": [
@@ -195,7 +195,7 @@
       ],
       "async": false
     },
-    "/home/aymeric/Epitech/portfolio_dev/node_modules/next/dist/esm/client/components/render-from-template-context.js": {
+    "/Users/rick/projets/perso/portfolio_dev/node_modules/next/dist/esm/client/components/render-from-template-context.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/render-from-template-context.js",
       "name": "*",
       "chunks": [
@@ -203,7 +203,7 @@
       ],
       "async": false
     },
-    "/home/aymeric/Epitech/portfolio_dev/node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js": {
+    "/Users/rick/projets/perso/portfolio_dev/node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js",
       "name": "*",
       "chunks": [
@@ -211,7 +211,7 @@
       ],
       "async": false
     },
-    "/home/aymeric/Epitech/portfolio_dev/node_modules/next/dist/esm/client/components/static-generation-searchparams-bailout-provider.js": {
+    "/Users/rick/projets/perso/portfolio_dev/node_modules/next/dist/esm/client/components/static-generation-searchparams-bailout-provider.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js",
       "name": "*",
       "chunks": [
@@ -219,7 +219,7 @@
       ],
       "async": false
     },
-    "/home/aymeric/Epitech/portfolio_dev/components/intro.tsx": {
+    "/Users/rick/projets/perso/portfolio_dev/components/intro.tsx": {
       "id": "(app-client)/./components/intro.tsx",
       "name": "*",
       "chunks": [
@@ -227,7 +227,7 @@
       ],
       "async": false
     },
-    "/home/aymeric/Epitech/portfolio_dev/components/section-divider.tsx": {
+    "/Users/rick/projets/perso/portfolio_dev/components/section-divider.tsx": {
       "id": "(app-client)/./components/section-divider.tsx",
       "name": "*",
       "chunks": [
@@ -235,7 +235,7 @@
       ],
       "async": false
     },
-    "/home/aymeric/Epitech/portfolio_dev/components/about.tsx": {
+    "/Users/rick/projets/perso/portfolio_dev/components/about.tsx": {
       "id": "(app-client)/./components/about.tsx",
       "name": "*",
       "chunks": [
@@ -243,7 +243,7 @@
       ],
       "async": false
     },
-    "/home/aymeric/Epitech/portfolio_dev/components/projects.tsx": {
+    "/Users/rick/projets/perso/portfolio_dev/components/projects.tsx": {
       "id": "(app-client)/./components/projects.tsx",
       "name": "*",
       "chunks": [
@@ -251,15 +251,7 @@
       ],
       "async": false
     },
-    "/home/aymeric/Epitech/portfolio_dev/components/skills.tsx": {
-      "id": "(app-client)/./components/skills.tsx",
-      "name": "*",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/home/aymeric/Epitech/portfolio_dev/components/experience.tsx": {
+    "/Users/rick/projets/perso/portfolio_dev/components/experience.tsx": {
       "id": "(app-client)/./components/experience.tsx",
       "name": "*",
       "chunks": [
@@ -267,7 +259,7 @@
       ],
       "async": false
     },
-    "/home/aymeric/Epitech/portfolio_dev/components/contact.tsx": {
+    "/Users/rick/projets/perso/portfolio_dev/components/contact.tsx": {
       "id": "(app-client)/./components/contact.tsx",
       "name": "*",
       "chunks": [
@@ -275,7 +267,31 @@
       ],
       "async": false
     },
-    "/home/aymeric/Epitech/portfolio_dev/components/header.tsx": {
+    "/Users/rick/projets/perso/portfolio_dev/components/skills.tsx": {
+      "id": "(app-client)/./components/skills.tsx",
+      "name": "*",
+      "chunks": [
+        "app/page:static/chunks/app/page.js"
+      ],
+      "async": false
+    },
+    "/Users/rick/projets/perso/portfolio_dev/node_modules/react-hot-toast/dist/index.mjs": {
+      "id": "(app-client)/./node_modules/react-hot-toast/dist/index.mjs",
+      "name": "*",
+      "chunks": [
+        "app/layout:static/chunks/app/layout.js"
+      ],
+      "async": false
+    },
+    "/Users/rick/projets/perso/portfolio_dev/node_modules/next/font/google/target.css?{\"path\":\"app/layout.tsx\",\"import\":\"Inter\",\"arguments\":[{\"subsets\":[\"latin\"],\"display\":\"swap\"}],\"variableName\":\"inter\"}": {
+      "id": "(app-client)/./node_modules/next/font/google/target.css?{\"path\":\"app/layout.tsx\",\"import\":\"Inter\",\"arguments\":[{\"subsets\":[\"latin\"],\"display\":\"swap\"}],\"variableName\":\"inter\"}",
+      "name": "*",
+      "chunks": [
+        "app/layout:static/chunks/app/layout.js"
+      ],
+      "async": false
+    },
+    "/Users/rick/projets/perso/portfolio_dev/components/header.tsx": {
       "id": "(app-client)/./components/header.tsx",
       "name": "*",
       "chunks": [
@@ -283,7 +299,7 @@
       ],
       "async": false
     },
-    "/home/aymeric/Epitech/portfolio_dev/components/theme-switch.tsx": {
+    "/Users/rick/projets/perso/portfolio_dev/components/theme-switch.tsx": {
       "id": "(app-client)/./components/theme-switch.tsx",
       "name": "*",
       "chunks": [
@@ -291,7 +307,7 @@
       ],
       "async": false
     },
-    "/home/aymeric/Epitech/portfolio_dev/context/active-section-context.tsx": {
+    "/Users/rick/projets/perso/portfolio_dev/context/active-section-context.tsx": {
       "id": "(app-client)/./context/active-section-context.tsx",
       "name": "*",
       "chunks": [
@@ -299,7 +315,7 @@
       ],
       "async": false
     },
-    "/home/aymeric/Epitech/portfolio_dev/context/theme-context.tsx": {
+    "/Users/rick/projets/perso/portfolio_dev/context/theme-context.tsx": {
       "id": "(app-client)/./context/theme-context.tsx",
       "name": "*",
       "chunks": [
@@ -307,24 +323,8 @@
       ],
       "async": false
     },
-    "/home/aymeric/Epitech/portfolio_dev/node_modules/next/font/google/target.css?{\"path\":\"app/layout.tsx\",\"import\":\"Inter\",\"arguments\":[{\"subsets\":[\"latin\"]}],\"variableName\":\"inter\"}": {
-      "id": "(app-client)/./node_modules/next/font/google/target.css?{\"path\":\"app/layout.tsx\",\"import\":\"Inter\",\"arguments\":[{\"subsets\":[\"latin\"]}],\"variableName\":\"inter\"}",
-      "name": "*",
-      "chunks": [
-        "app/layout:static/chunks/app/layout.js"
-      ],
-      "async": false
-    },
-    "/home/aymeric/Epitech/portfolio_dev/app/globals.css": {
+    "/Users/rick/projets/perso/portfolio_dev/app/globals.css": {
       "id": "(app-client)/./app/globals.css",
-      "name": "*",
-      "chunks": [
-        "app/layout:static/chunks/app/layout.js"
-      ],
-      "async": false
-    },
-    "/home/aymeric/Epitech/portfolio_dev/node_modules/react-hot-toast/dist/index.mjs": {
-      "id": "(app-client)/./node_modules/react-hot-toast/dist/index.mjs",
       "name": "*",
       "chunks": [
         "app/layout:static/chunks/app/layout.js"
@@ -333,10 +333,10 @@
     }
   },
   "entryCSSFiles": {
-    "/home/aymeric/Epitech/portfolio_dev/app/page": [
+    "/Users/rick/projets/perso/portfolio_dev/app/page": [
       "static/css/app/page.css"
     ],
-    "/home/aymeric/Epitech/portfolio_dev/app/layout": [
+    "/Users/rick/projets/perso/portfolio_dev/app/layout": [
       "static/css/app/layout.css"
     ]
   }
