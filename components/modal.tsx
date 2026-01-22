@@ -70,129 +70,128 @@ const Modal: React.FC<ModalProps> = ({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="fixed inset-0 flex items-center justify-center z-50 p-4 bg-opacity-75 touch-none"
+          className="fixed inset-0 flex items-center justify-center z-50 p-4 bg-opacity-75 touch-none backdrop-blur-sm"
           onClick={handleBackgroundClick}
           style={{
             backgroundColor: isDarkTheme
-              ? "rgba(0, 0, 0, 0.75)"
-              : "rgba(0, 0, 0, 0.25)",
+              ? "rgba(0, 0, 0, 0.85)" // Fond un peu plus sombre pour le focus
+              : "rgba(0, 0, 0, 0.45)",
           }}
         >
           <motion.div
             ref={modalRef}
-            initial={{ scale: 0.9, y: 20 }}
-            animate={{ scale: 1, y: 0 }}
-            exit={{ scale: 0.9, y: 20 }}
-            transition={{ type: "spring", damping: 25, stiffness: 500 }}
-            className={`w-full max-w-2xl rounded-2xl overflow-hidden shadow-2xl relative ${
-              isDarkTheme ? "bg-gray-800 text-white" : "bg-white text-gray-800"
+            initial={{ scale: 0.95, y: 20, opacity: 0 }}
+            animate={{ scale: 1, y: 0, opacity: 1 }}
+            exit={{ scale: 0.95, y: 20, opacity: 0 }}
+            transition={{ type: "spring", damping: 25, stiffness: 300 }}
+            // MODIFICATION 1 : max-w-5xl pour élargir la fenêtre sur desktop
+            className={`w-full max-w-5xl rounded-2xl overflow-hidden shadow-2xl relative flex flex-col max-h-[90vh] ${
+              isDarkTheme ? "bg-gray-900 text-white" : "bg-white text-gray-900"
             }`}
-            onClick={(e) => e.stopPropagation()} // Stop propagation to prevent closing on click
+            onClick={(e) => e.stopPropagation()}
           >
-            {/* Bouton mobile de fermeture */}
-            <button
-              onClick={(e) => {
-                e.stopPropagation(); // Stop propagation to avoid triggering background click
-                handleClose();
-              }}
-              className="absolute top-2 right-2 z-50 w-8 h-8 flex items-center justify-center rounded-full bg-black/50 text-white sm:hidden"
-              aria-label="Fermer"
-            >
-              ×
-            </button>
-
-            {/* Header */}
-            <div className="flex justify-between items-center px-4 py-3 border-b border-opacity-20 border-gray-600">
-              <h2 className="text-2xl font-bold">{title}</h2>
+            {/* Header Fixe */}
+            <div className={`flex justify-between items-center px-6 py-4 border-b z-10 ${
+              isDarkTheme ? "border-gray-700 bg-gray-900" : "border-gray-200 bg-white"
+            }`}>
+              <h2 className="text-xl sm:text-2xl font-bold truncate pr-4">{title}</h2>
               <button
-                onClick={(e) => {
-                  e.stopPropagation(); // Stop propagation to avoid triggering background click
-                  handleClose();
-                }}
-                className={`text-2xl hidden sm:block ${
+                onClick={handleClose}
+                className={`p-2 rounded-full transition-colors ${
                   isDarkTheme
-                    ? "text-gray-400 hover:text-gray-200"
-                    : "text-gray-600 hover:text-gray-800"
-                } transition-colors`}
+                    ? "hover:bg-gray-800 text-gray-400 hover:text-white"
+                    : "hover:bg-gray-100 text-gray-500 hover:text-black"
+                }`}
               >
-                &times;
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
               </button>
             </div>
 
-            {/* Content */}
-            <div className="flex-grow overflow-y-auto max-h-[80vh]">
-              <div className="p-4">
-                {/* Image Section */}
-                <div className="w-full h-72 relative rounded-lg overflow-hidden mb-4">
-                  <Image
-                    src={imageUrl}
-                    alt={`Screenshot of ${title} project`}
-                    layout="fill"
-                    objectFit="cover"
-                    quality={95}
-                  />
-                </div>
+            {/* Content Scrollable */}
+            <div className="overflow-y-auto custom-scrollbar">
+              
+              {/* MODIFICATION 2 & 3 : Image en pleine largeur (Edge-to-Edge) et plus haute */}
+              <div className="relative w-full h-64 sm:h-80 md:h-[500px] bg-gray-100">
+                <Image
+                  src={imageUrl}
+                  alt={`Screenshot of ${title} project`}
+                  fill
+                  // object-contain permet de voir TOUTE l'image sans couper (utile pour dashboards)
+                  // Si tu préfères que ça remplisse tout (zoomé), remets "cover"
+                  className="object-cover object-top" 
+                  quality={95}
+                  priority
+                />
+              </div>
 
-                {/* Description */}
-                <p className="text-base mb-4">{description}</p>
+              <div className="p-6 sm:p-8 space-y-8">
+                {/* Description & Link Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  <div className="md:col-span-2">
+                    <h3 className="text-lg font-semibold mb-3 flex items-center gap-2">
+                      À propos du projet
+                    </h3>
+                    <p className={`text-base leading-relaxed ${isDarkTheme ? "text-gray-300" : "text-gray-600"}`}>
+                      {description}
+                    </p>
+                  </div>
 
-                {/* Technologies */}
-                <div className="mb-4">
-                  <h3 className="text-lg font-semibold mb-2">Technologies utilisées</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {tags.map((tag, index) => (
-                      <motion.span
-                        key={index}
+                  {/* Bouton d'action à droite sur Desktop */}
+                  <div className="flex flex-col justify-start items-start md:items-end">
+                    {host && (
+                      <motion.a
+                        href={host}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         whileHover={{ scale: 1.05 }}
-                        className={`px-3 py-1 text-sm rounded-full ${
-                          isDarkTheme
-                            ? "bg-gray-700 text-gray-200"
-                            : "bg-gray-200 text-gray-800"
-                        }`}
+                        whileTap={{ scale: 0.95 }}
+                        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-bold shadow-lg transition-all bg-gradient-to-r from-[#7000FF] to-[#9d4eff] text-white hover:shadow-purple-500/30"
                       >
-                        {tag}
-                      </motion.span>
-                    ))}
+                        Voir le projet en live
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                      </motion.a>
+                    )}
                   </div>
                 </div>
 
-                {/* Competencies */}
-                <div className="mb-6">
-                  <h3 className="text-lg font-semibold mb-2">
-                    Compétences développées
-                  </h3>
-                  <ul className="list-disc pl-5 space-y-1">
-                    {competencies.map((competency, index) => (
-                      <motion.li
-                        key={index}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: index * 0.1 }}
-                      >
-                        {competency}
-                      </motion.li>
-                    ))}
-                  </ul>
-                </div>
+                <div className="h-px w-full bg-gradient-to-r from-transparent via-gray-500/20 to-transparent" />
 
-                {/* Project Link */}
-                {host && (
-                  <div className="flex justify-end mt-4">
-                    <motion.a
-                      href={host}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.02 }}
-                      className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                        isDarkTheme
-                          ? "bg-gray-700 text-gray-200 hover:bg-gray-600"
-                          : "bg-gray-200 text-gray-800 hover:bg-gray-300"
-                      }`}
-                    >
-                      Voir le projet
-                    </motion.a>
+                {/* Tech & Skills Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {/* Technologies */}
+                  <div>
+                    <h3 className="text-lg font-semibold mb-4"> Stack Technique</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {tags.map((tag, index) => (
+                        <span
+                          key={index}
+                          className={`px-3 py-1.5 text-sm font-medium rounded-lg border ${
+                            isDarkTheme
+                              ? "bg-gray-800 border-gray-700 text-gray-300"
+                              : "bg-gray-50 border-gray-200 text-gray-700"
+                          }`}
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                )}
+
+                  {/* Competencies */}
+                  <div>
+                    <h3 className="text-lg font-semibold mb-4"> Compétences clés</h3>
+                    <ul className="space-y-2">
+                      {competencies.map((competency, index) => (
+                        <li key={index} className="flex items-start gap-2 text-sm">
+                          <span className="text-[#7000FF] mt-1">▹</span>
+                          <span className={isDarkTheme ? "text-gray-300" : "text-gray-600"}>
+                            {competency}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>

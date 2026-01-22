@@ -9,6 +9,7 @@ import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
+import BlurText from "@/components/BlurText"; // Assure-toi que le chemin est bon
 
 export default function Intro() {
     const { ref } = useSectionInView("Home");
@@ -27,7 +28,7 @@ export default function Intro() {
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ type: "spring", duration: 0.5 }}
                     >
-                         {/* Espace réservé pour une photo si besoin, sinon laisser vide ou mettre un emoji/memoji */}
+                         {/* Espace réservé pour une photo si besoin */}
                     </motion.div>
                 </div>
             </div>
@@ -37,8 +38,23 @@ export default function Intro() {
                 initial={{ opacity: 0, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}
             >
-                <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-6">
-                    Bonjour, je suis <span className="text-blue-600">Aymeric</span>
+                {/* Modification ICI : Intégration de React Bits */}
+                <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-6 flex flex-wrap justify-center gap-2">
+                    <BlurText 
+                        text="Bonjour, je suis" 
+                        delay={150} 
+                        animateBy="words" 
+                        direction="top"
+                        className="text-gray-900 dark:text-gray-100"
+                    />
+                    <motion.span 
+                        className="text-blue-600"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 0.8, type: "spring" }} // Apparait juste après l'animation BlurText
+                    >
+                        Aymeric
+                    </motion.span>
                 </h1>
                 
                 <p className="text-xl sm:text-2xl font-normal text-gray-700 dark:text-white/80">
