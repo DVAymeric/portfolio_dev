@@ -106,7 +106,7 @@ export const projectsData = [
         title: "CinéMatch AI",
         description:
             "Système de recommandation de films intelligent. Utilise le filtrage collaboratif et le clustering pour suggérer des films, avec enrichissement des données client via APIs externes.",
-        tags: ["Python", "Machine Learning", "Streamlit", "API REST", "NLP"],
+        tags: ["Python", "Machine Learning", "API REST", "NLP"],
         imageUrl: "/cinematch.png",
         modalImageUrl: "/cinema.png",
         host: "https://nf3aypg8lyfogxvps599su.streamlit.app/", // Lien mis à jour ici
@@ -122,13 +122,12 @@ export const projectsData = [
         title: "Dashboard KPI Toys & Models",
         description:
             "Dashboard BI automatisé (multi-activités). Suivi RH, ventes et logistique connecté à SQL Server. Permet une actualisation automatique des données et un suivi stratégique pour la prise de décision.",
-        tags: ["Power BI", "SQL Server", "Gestion Agile", "Data Analysis", "Canva"],
+        tags: ["Power BI", "SQL Server", "ETL"],
         imageUrl: "/toys-models_2.png", 
         modalImageUrl: "/dashboard.png", 
         // 👇 Remplace ce lien par ton lien PUBLIC Power BI (celui en /view?r=...)
         //host: "https://app.powerbi.com/view?r=...", 
         competencies: [
-            "Gestion de projet agile", 
             "SQL", 
             "Microsoft Power BI", 
             "Analyse des données",
