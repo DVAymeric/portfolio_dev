@@ -6,6 +6,7 @@ import Footer from "@/components/footer";
 import ThemeSwitch from "@/components/theme-switch";
 import ThemeContextProvider from "@/context/theme-context";
 import { Toaster } from "react-hot-toast";
+import { SpeedInsights } from "@vercel/speed-insights/next"; // 👈 1. Import ajouté
 
 const inter = Inter({ 
     subsets: ["latin"],
@@ -13,7 +14,7 @@ const inter = Inter({
 });
 
 export const metadata = {
-    metadataBase: new URL('https://votre-domaine.com'), // À remplacer
+    metadataBase: new URL('https://votre-domaine.com'), // À remplacer par ton vrai domaine Vercel ou perso
     title: {
         default: "Aymeric Di Vito | Développeur Full-Stack",
         template: "%s | Aymeric Di Vito"
@@ -41,7 +42,7 @@ export const metadata = {
         description: "Portfolio professionnel - Data Analyst",
         siteName: "Aymeric Di Vito Portfolio",
         images: [{
-            url: "/og-image.jpg", // À créer
+            url: "/og-image.jpg", // À créer dans public/
             width: 1200,
             height: 630,
             alt: "Aymeric Di Vito - Développeur Full-Stack"
@@ -65,7 +66,7 @@ export const metadata = {
         },
     },
     verification: {
-        google: 'votre-code-google-search-console', // À ajouter
+        google: 'votre-code-google-search-console', // À ajouter si tu as la Search Console
     }
 };
 
@@ -115,6 +116,10 @@ export default function RootLayout({
                             }}
                         />
                         <ThemeSwitch />
+                        
+                        {/* 👇 2. Composant ajouté ici */}
+                        <SpeedInsights />
+                        
                     </ActiveSectionContextProvider>
                 </ThemeContextProvider>
             </body>
